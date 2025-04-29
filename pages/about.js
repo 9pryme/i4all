@@ -59,7 +59,7 @@ export default function About() {
         <section className="py-12 sm:py-16 md:py-20">
           <div className="site-layout px-4 sm:px-6">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold text-[#FF6B00] mb-4 sm:mb-6 font-heading leading-tight">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold text-black mb-4 sm:mb-6 font-heading leading-tight">
                 Multi-faceted barriers exist, extenuating exclusion
               </h2>
               

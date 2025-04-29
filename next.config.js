@@ -1,21 +1,33 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  experimental: {
-    optimizeFonts: true,
-  },
-  images: {
-    domains: ['inclusion-for-all.org'],
-  },
-  // Ensure trailing slashes for better static hosting compatibility
+  output: 'export',
   trailingSlash: true,
-  // Enable static export
-  exportPathMap: async function (defaultPathMap) {
-    return {
+  images: {
+    unoptimized: true,
+  },
+  // Add paths that should be statically generated
+  exportPathMap: async function () {
+    // Fetch blog posts from WordPress API
+    const res = await fetch('https://inclusion-for-all.org/wp-json/wp/v2/posts');
+    const posts = await res.json();
+
+    // Create path map object with default routes
+    const paths = {
       '/': { page: '/' },
+      '/about': { page: '/about' },
+      '/resources': { page: '/resources' },
+      '/data-explorer': { page: '/data-explorer' },
       '/404': { page: '/404' },
     };
+
+    // Add dynamic blog post routes
+    posts.forEach(post => {
+      paths[`/blog/${post.slug}`] = { page: '/blog/[slug]', query: { slug: post.slug } };
+    });
+
+    return paths;
   },
 };
 
-module.exports = nextConfig; 
+module.exports = nextConfig;
