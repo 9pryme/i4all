@@ -1,9 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  output: 'export',
+  experimental: {
+    optimizeFonts: true,
+  },
   images: {
-    unoptimized: true,
+    domains: ['inclusion-for-all.org'],
   },
   // Ensure trailing slashes for better static hosting compatibility
   trailingSlash: true,

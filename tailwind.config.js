@@ -4,6 +4,14 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
+  safelist: [
+    'bg-amber-50',
+    'bg-green-600',
+    'hover:bg-green-700',
+    'text-green-600',
+    'text-white',
+    'rounded-full'
+  ],
   theme: {
     extend: {
       colors: {
@@ -20,9 +28,13 @@ module.exports = {
           '800': '#1F2937',
           '900': '#111827',
         },
+        amber: {
+          '50': '#FDF8E7',  // Custom amber-50 to match the original hero color
+        }
       },
       fontFamily: {
         'cormorant': ['Cormorant Garamond', 'serif'],
+        'serif': ['Cormorant Garamond', 'serif'],
       },
       typography: (theme) => ({
         DEFAULT: {

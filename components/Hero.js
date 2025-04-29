@@ -8,7 +8,7 @@ export default function Hero() {
   const closeModal = () => setModalOpen(false);
 
   return (
-    <section className="bg-[#FDF8E7] py-8 relative overflow-hidden">
+    <section className="bg-amber-50 py-8 relative overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center text-center">
           <div className="w-full max-w-7xl mb-6">
