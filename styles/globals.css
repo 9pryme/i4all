@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font-heading {
+  font-family: 'Cormorant Garamond', serif;
+}
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-ticker {
+  animation: ticker 30s linear infinite;
+}
+
+.ticker-container:hover .animate-ticker {
+  animation-play-state: paused;
+}
+
+/* Layout styles */
+.site-layout {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (max-width: 1024px) {
+  .site-layout {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+/* Custom Tailwind colors */
+:root {
+  --color-primary-green: #0C8E61;
+  --color-primary-yellow: #F0C808;
+  --color-primary-orange: #E36414;
+}
+
+.bg-primary-green {
+  background-color: var(--color-primary-green);
+}
+.bg-primary-yellow {
+  background-color: var(--color-primary-yellow);
+}
+.bg-primary-orange {
+  background-color: var(--color-primary-orange);
+}
+.text-primary-green {
+  color: var(--color-primary-green);
+}
+
+/* Mobile menu styles */
+.mobile-menu {
+  background-color: white;
+  border-top: 1px solid #f1f1f1;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding: 0 1rem;
+}
+
+.mobile-menu.active {
+  height: auto;
+  opacity: 1;
+  padding: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Form Styles */
+.form-input,
+.form-textarea,
+.form-select,
+.form-multiselect {
+  @apply border-gray-300 focus:border-green-500 focus:ring focus:ring-green-500 focus:ring-opacity-50 rounded-md shadow-sm;
+}
+
+.form-checkbox,
+.form-radio {
+  @apply border-gray-300 text-green-600 focus:ring-green-500;
+}
+
+/* Custom Button Styles */
+.btn {
+  @apply px-4 py-2 rounded-full transition-colors;
+}
+
+.btn-primary {
+  @apply bg-green-600 text-white hover:bg-green-700;
+}
+
+.btn-secondary {
+  @apply bg-gray-100 text-gray-700 hover:bg-gray-200;
+}
+
+.btn-outline {
+  @apply border border-green-600 text-green-600 hover:bg-green-50;
+}
+
+/* Hero section styles */
+.hero-section {
+  background-color: #f9fafb;
+  background-image: url('/assets/images/hero-pattern.svg');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: contain;
+} 
